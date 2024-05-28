@@ -1,0 +1,448 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+::after,
+::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+h1 {
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.wrapper {
+    display: flex;
+}
+
+.main {
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    background-color: #fafbfe;
+}
+
+#sidebar {
+    width: 70px;
+    min-width: 70px;
+    z-index: 1000;
+    transition: all 0.3s ease-in-out; /* Adjusted to match the main transition */
+    display: flex;
+    flex-direction: column;
+}
+
+#sidebar.expand {
+    width: 260px;
+    min-width: 260px;
+}
+
+.toggle-btn {
+    background-color: transparent;
+    cursor: pointer;
+    border: 0;
+    padding: 1rem 1.5rem;
+}
+
+.toggle-btn i {
+    font-size: 1.5rem;
+    color: #FFF;
+}
+
+.sidebar-logo {
+    margin: auto 0;
+}
+
+.sidebar-logo a {
+    color: #FFF;
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+#sidebar:not(.expand) .sidebar-logo {
+    display: block;
+}
+
+#sidebar:not(.expand) .sidebar-logo span {
+    display: none;
+}
+
+#sidebar:not(.expand) a.sidebar-link span {
+    display: none;
+}
+
+.sidebar-nav {
+    padding: 2rem 0;
+    flex: 1 1 auto;
+    background-color: #fd8522;
+}
+
+a.sidebar-link {
+    padding: .625rem 1.625rem;
+    color: #FFF;
+    display: block;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    border-left: 3px solid transparent;
+}
+
+.sidebar-footer {
+    background-color: #fd8522;
+}
+
+.sidebar-footer span {
+    color: #000;
+    font-weight: bold;
+}
+
+.sidebar-link i {
+    font-size: 1.1rem;
+    margin-right: .75rem;
+}   
+
+a.sidebar-link:hover {
+    background-color: rgba(255, 255, 255, .075);
+    border-left: 3px solid #f86300;
+}
+
+.sidebar-item {
+    position: relative;
+}
+
+#sidebar:not(.expand) .sidebar-item .sidebar-dropdown {
+    position: absolute;
+    top: 0;
+    left: 70px;
+    background-color: #0e2238;
+    padding: 0;
+    min-width: 15rem;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+#sidebar:not(.expand) .sidebar-item:hover .has-dropdown + .sidebar-dropdown {
+    max-height: 15em;
+    opacity: 1;
+}
+
+#sidebar.expand .sidebar-link[data-bs-toggle="collapse"]::after {
+    border: solid;
+    border-width: 0 .075rem .075rem 0;
+    content: "";
+    display: inline-block;
+    padding: 2px;
+    position: absolute;
+    right: 1.5rem;
+    top: 1.4rem;
+    transform: rotate(-135deg);
+    transition: transform 0.3s ease-out;
+}
+
+#sidebar.expand .sidebar-link[data-bs-toggle="collapse"].collapsed::after {
+    transform: rotate(45deg);
+    transition: transform 0.3s ease-out;
+}
+
+
+
+
+/* Main Section */
+
+    .main {
+        position: relative;
+        width: 100%;
+        height: 100vh; /* Set height to 100% */
+        overflow-y: hidden; /* Disable vertical scrollbar */
+    }
+    .main-top {
+        display: flex;
+        width: 100%;
+    }
+    main-top i {
+        position: absolute;
+        right: 0;
+        margin: 10px 30px;
+        color: rgb(110, 109, 109);
+        cursor: pointer;
+    }
+    .main-skills {
+      display: flex;
+      flex-wrap: wrap; /* Allow cards to wrap to the next line */
+      justify-content: left; /* Center-align the cards */
+      margin-top: 20px;
+  }
+  .main-skills .card {
+    width: calc(24% - 160px); /* Adjust the width for smaller screens */
+    margin: 10px;
+    background: #fff;
+    text-align: center;
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+.main-skills .card h3{
+  margin: 10px;
+  text-transform: capitalize;
+}
+.main-skills .card p{
+  font-size: 12px;
+}
+.main-skills .card button {
+    background: darkorange;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-top: 15px;
+    cursor: pointer;
+    border: none;
+    transition: background 0.3s ease;
+}
+.main-skills .card button .a{
+ text-style:none;
+}
+.main-skills .card button:hover {
+    background: orange;
+}
+.main-skills .card i{
+  font-size: 22px;
+  padding: 10px;
+}
+/* Courses */
+.main-course {
+  margin-top: 20px;
+  text-transform: capitalize;
+}
+
+.course-box {
+  width: 100%;
+  height: 300px;
+  padding: 10px;
+  margin-top: 10px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+
+.course-box ul {
+  list-style: none;
+  display: flex;
+}
+
+.course-box ul li {
+  margin: 10px;
+  color: gray;
+  cursor: pointer;
+}
+
+.course-box ul .active {
+  color: #000;
+  border-bottom: 1px solid #000;
+}
+
+.course-box .course {
+  display: flex;
+}
+
+.box {
+  width: 100%; /* Adjusted for responsiveness */
+  padding: 10px;
+  margin: 10px 0; /* Adjusted for responsiveness */
+  border-radius: 10px;
+  background: rgb(235, 233, 233);
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+
+.box p {
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.box button {
+  background: #000;
+  color: #e4e4e4;
+  padding: 7px 10px;
+  border-radius: 10px;
+  margin-top: 1rem; /* Adjusted for responsiveness */
+  cursor: pointer;
+}
+
+.box button:hover {
+  background: rgba(0, 0, 0, 0.842);
+}
+
+.box i {
+  font-size: 4rem; /* Adjusted for responsiveness */
+  float: right;
+  margin: -20px 20px 20px 0;
+}
+
+.html {
+  color: rgb(25, 94, 54);
+}
+
+.css {
+  color: rgb(104, 179, 35);
+}
+
+.js {
+  color: rgb(28, 98, 179);
+}
+
+
+/* Additional styles for modal */
+.modal-header {
+    background-color: #212529;
+    color: #ffffff;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+    .modal-body {
+        /* Add your modal body styles here */
+    }
+
+    .modal-footer {
+        /* Add your modal footer styles here */
+    }
+    .custom-button a{
+        color: white;
+        text-decoration: none;
+    }
+
+    .eye-icon {
+        max-height: 24px; /* Adjust the maximum height as needed */
+        max-width: 24px;  /* Adjust the maximum width as needed */
+        cursor: pointer;
+    }
+
+    .input-group-text {
+        cursor: pointer;
+    }
+
+
+    #noti_number {
+      margin-top: 10px;
+  }
+
+  .fa-bell {
+      font-size: 1em;
+      /* Increase the size of the bell icon */
+  }
+
+  .sidebar-item {
+      font-size: 80px;
+      /* Adjust the font size as needed */
+  }
+
+  /* Footer styles */
+  .footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 15px 2px;
+      text-align: left;
+      font-size: 14px;
+      font-weight: bold;
+  }
+
+  #uploadVersionDiv {
+      display: none;
+  }
+
+  .notification-container {
+      position: relative;
+  }
+
+  .notification-badge {
+      position: absolute;
+      top: -1px;
+      /* Adjust the value as needed */
+      right: 135px;
+      /* Adjust the value as needed */
+      background-color: red ;
+      color: white;
+      font-weight: bold;
+      border-radius: 40%;
+      padding: 3px 5px;
+      font-size: 12px;
+  }
+
+  .card-logo {
+      max-width: 60px;
+      /* Adjust the maximum width of the logo */
+      height: auto;
+      /* Maintain aspect ratio */
+      display: block;
+      /* Ensure the logo is displayed as a block element */
+      margin: 0 auto;
+      /* Center the logo horizontally */
+  }
+
+  .custom-button {
+      color: black;
+  }
+
+
+  /* Sidebar Animation */
+  #sidebar {
+      transition: transform 0.3s ease;
+  }
+
+  .sidebar-hidden {
+      transform: translateX(-100%);
+  }
+
+  /* Main Content Background */
+  #main-content {
+      background-color: black;
+      /* Set the background color to #212529 */
+      transition: margin-left 0.3s ease;
+      width: calc(100% - 250px);
+      /* Set the initial width to occupy the screen minus sidebar width */
+  }
+
+  .main-content-hidden {
+      margin-left: 0;
+      /* Adjust the margin to 0 when the sidebar is hidden */
+      width: 100%;
+      /* Set the width to occupy the entire screen when sidebar is hidden */
+  }
+
+  .wrapper {
+      background-color: var(--bs-dark-bg-subtle);
+  }
+    @media (max-width: 768px) {
+      .main-skills .card {
+          width: calc(25% - 15px); /* Adjust the width for medium-sized screens */
+      }
+  }
+  
+  @media (max-width: 576px) {
+      .main-skills .card {
+          width: calc(50% - 15px); /* Adjust the width for small screens */
+      }
+  }
+  
+  @media only screen and (max-device-width: 414px) and (orientation: portrait) {
+      /* Adjustments for iPhones in portrait orientation */
+      .main-skills .card {
+          width: calc(100% - 15px); /* Full width for iPhones in portrait orientation */
+      }
+  }
+
+  

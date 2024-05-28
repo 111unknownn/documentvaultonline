@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full-Text Search</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <h2 class="mt-4">Full-Text Search</h2>
+    <div class="input-group mb-3">
+        <input type="text" id="search-input" class="form-control" placeholder="Search documents...">
+        <div class="input-group-append">
+            <button class="btn btn-primary" type="button" onclick="searchDocuments()">Search</button>
+        </div>
+    </div>
+    <div id="results"></div>
+</div>
+
+<script>
+function searchDocuments() {
+    var query = $("#search-input").val();
+    $.ajax({
+        url: "search.php",
+        type: "POST",
+        data: { query: query },
+        success: function(data) {
+            var documents = JSON.parse(data);
+            var resultsDiv = $("#results");
+            resultsDiv.empty();
+            if (documents.length > 0) {
+                documents.forEach(function(document) {
+                    resultsDiv.append(
+                        "<div class='card mb-3'><div class='card-body'>" +
+                        "<h5 class='card-title'>" + document.title + "</h5>" +
+                        "<p class='card-text'><strong>Author:</strong> " + document.author + "</p>" +
+                        "<p class='card-text'><strong>Category:</strong> " + document.category + "</p>" +
+                        "<p class='card-text'><strong>Tags:</strong> " + document.tags + "</p>" +
+                        "</div></div>"
+                    );
+                });
+            } else {
+                resultsDiv.append("<p>No documents found</p>");
+            }
+        }
+    });
+}
+</script>
+</body>
+</html>

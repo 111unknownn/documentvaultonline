@@ -1,0 +1,25 @@
+/* Style the message icon */
+.message-icon {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: #3498db;
+    cursor: pointer;
+}
+
+/* Style the message container */
+.message-container {
+    display: none;
+    position: fixed;
+    top: 50px;
+    right: 10px;
+    width: 300px;
+    background: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    z-index: 999;
+    overflow-y: auto;
+    max-height: 400px;
+}

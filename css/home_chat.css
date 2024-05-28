@@ -1,0 +1,85 @@
+/* Ensure styles only apply within specific containers */
+.chat-interface .vh-100 {
+    min-height: 100vh;
+}
+
+.chat-interface .w-400 {
+    width: 400px;
+}
+
+.chat-interface .fs-xs {
+    font-size: 1rem;
+}
+
+.chat-interface .w-10 {
+    width: 10%;
+}
+
+.chat-interface a {
+    text-decoration: none;
+}
+
+.chat-interface .fs-big {
+    font-size: 5rem;
+}
+
+.chat-interface .online {
+    width: 10px;
+    height: 10px;
+    background: green;
+    border-radius: 50%;
+}
+
+.chat-interface .w-15 {
+    width: 15%;
+}
+
+.chat-interface .fs-sm {
+    font-size: 1.4rem;
+}
+
+.chat-interface small {
+    color: #bbb;
+    font-size: 0.7rem;
+    text-align: right;
+}
+
+.chat-interface .chat-box {
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 50vh;
+}
+
+.chat-interface .rtext {
+    width: 65%;
+    background: #f8f9fa;
+    color: #444;
+}
+
+.chat-interface .ltext {
+    width: 65%;
+    background: #3289c8;
+    color: #fff;
+}
+
+/* Scrollbar styles */
+.chat-interface *::-webkit-scrollbar {
+    width: 3px;
+}
+
+.chat-interface *::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.chat-interface *::-webkit-scrollbar-thumb {
+    background: #aaa;
+}
+
+.chat-interface *::-webkit-scrollbar-thumb:hover {
+    background: #3289c8;
+}
+
+/* Prevent textarea from resizing */
+.chat-interface textarea {
+    resize: none;
+}

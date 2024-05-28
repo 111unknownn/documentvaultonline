@@ -1,0 +1,51 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.messaging-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.recipient-list, .message-composer, .message-list {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.recipient-list {
+    width: 20%;
+}
+
+.message-composer {
+    width: 30%;
+}
+
+.message-list {
+    width: 45%;
+}
+
+textarea {
+    width: 100%;
+}
+
+.message {
+    border: 1px solid #eee;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.message-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sender {
+    font-weight: bold;
+}
+
+.message-attachment a {
+    text-decoration: none;
+    color: blue;
+}

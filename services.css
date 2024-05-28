@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500;600;700;800&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    
+
+}
+.container{
+    height: 100vh;
+    width: 100%;
+    padding: 0 8%;
+    background-color: #f0f2f5;;
+}
+.container h1{
+    position: relative;
+    text-transform: uppercase;
+    text-align: center;
+    padding-top: 10%;
+    margin-bottom: 60px;
+}
+.container h1::after{
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    width: 100px;
+    height: 5px;
+    background: #ff7200;
+    transform: translateX(-50%);
+}
+
+.container .row{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 30px;
+
+}
+.container .row .service {
+    color:#555;
+    padding: 25px 10px;
+    text-align: center;
+    border-radius: 7px;
+    transition: transform .5s;
+    cursor: pointer;
+    font-size: 14px;
+}
+.container .row .service:hover{
+    transform: scale(1.1);
+    background:#ff7200;
+    color: #fff;
+}
+.container .row .service i{
+    font-size: 40px;
+    color: #ff7200;;
+    margin-bottom: 10px;
+}
+.container .row .service:hover i{
+    color: #fff;
+}
+.container .row .service h2 {
+    margin-bottom: 8px;
+}
+
+nav {
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    top: 0;
+    background:  #f0f2f5;
+    transition: top 0.3s ease-in-out;
+    box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.05);
+}
+
+nav.scrolled {
+    top: 0;
+}
+
+nav{
+    background: white;
+    height: 80px;
+    width: 100%;
+    background-color:#f0f2f5;
+}   
+label.logo{
+    color: #ff7200;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: Arial;
+    padding-left: 80px;
+    float: left;
+    padding-top: 10px;
+    margin-top: 5px
+}
+nav ul{
+    float: right;
+    margin-right: 20px;
+}
+nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+nav ul li a{
+    color: black;
+    font-size: 17px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+}
+a.active:hover{
+    background: #ff7200;
+    transition: 0.5s;
+}
+
+.checkbtn{
+    font-size: 30px;
+    color: black;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+}
+#check{
+    display: none;
+}
+ .main {
+    padding-top: 70px; /* Ensure content starts below the navbar */
+ }
+ .section-image {
+    position: relative;
+}
+
+
+@media screen and (max-width: 952px){
+    .heading{
+        padding: 0px 20px;
+    }
+    .heading h1{
+        font-size: 36px;
+    }
+    .heading p{
+        font-size: 17px;
+        margin-bottom: 0px;
+    }
+    .container{
+        padding: 0px;
+    }
+    .about{
+        padding: 10px;
+        flex-direction: column;
+    }
+    .about-image{
+        margin-right: 0px;
+        margin-bottom: 10px;
+    }
+    .another-sectopn{
+        background-color: white;
+    }
+    .about-content{
+        padding: 0px;
+        font-size: 10px  ;
+    }
+    .about-content .read-more {
+        font-size: 14px; /* Adjust the font size as needed */
+        padding: 8px 16px; /* Modify the padding for smaller screens */
+    }
+    label.logo{
+       display: none;
+    }
+    nav ul li a{
+        font-size: 16px;
+    }
+    @media screen and (max-width: 858px){
+        .checkbtn {
+            display: block; /* Display the hamburger icon */
+        }
+    
+       
+        /* Hiding the heading h1 */
+        .heading h1 {
+            display: none;
+        }
+        ul{
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            background: #ff7200;
+            top: 80px;
+            left: -100%;
+            text-align: center;
+            transition: all .5s;
+        }
+        nav ul li{
+            display: block;
+        }
+        nav ul li a {
+            font-size: 20px;
+        }
+        a:hover,a.active{
+            background: none;
+            color:#f0f2f5;;
+        }
+        #check:checked ~ ul{
+            left: 0;
+        }
+
+    }
+    
+
+}
+    
+
+
